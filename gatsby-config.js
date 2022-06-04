@@ -1,12 +1,17 @@
+require(`dotenv`).config()
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `The Website Guy`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.thewebsiteguy.uk`
   },
   plugins: [{
     resolve: 'gatsby-source-wordpress',
     options: {
-      "url": "https://backend.websitesstudio.ltd/graphql"
+      "url": process.env.WPGRAPHQL_URL,
     }
   }, "gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
