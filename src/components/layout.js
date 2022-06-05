@@ -1,6 +1,5 @@
-import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
+import Footer from './footer'
 import Navbar from './navbar'
 
 export default function Layout({ children }) {
@@ -8,6 +7,7 @@ export default function Layout({ children }) {
         <>
             <Navbar />
             {children}
+            <Footer />
         </>
     )
 }
